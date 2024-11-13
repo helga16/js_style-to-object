@@ -6,12 +6,12 @@
  * @return {object}
  */
 function convertToObject(sourceString) {
-  const arrayWithStyles = complexStylesString.split(';')
+  const arrayWithStyles = sourceString.split(';')
     .map((el) => el.trim());
   const resultObject = {};
 
-  for (const el of arrayWithStyles) {
-    const pair = el.split(':').map((el) => el.trim());
+  for (const elem of arrayWithStyles) {
+    const pair = elem.split(':').map((el) => el.trim());
     resultObject[pair[0]] = pair[1];
   }
 
